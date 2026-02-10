@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stan Gardens | Hidden Garden Oasis in Nairobi</title>
+    <meta name="description" content="Discover Stan Gardens - your perfect event venue in Nairobi. Lush gardens, swimming pool, dining, and event spaces for weddings, birthdays, and corporate events.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap');
+        
+        :root {
+            --forest: #1B4332;
+            --sage: #52796F;
+            --moss: #74A98D;
+            --cream: #F8F5F1;
+            --sand: #E8DCC4;
+            --terracotta: #C97C5D;
+            --white: #FFFFFF;
+            --charcoal: #2D2D2D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--cream);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 245, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(116, 169, 141, 0.2);
+        }
+        
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--forest);
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--forest);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--moss);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.3), rgba(116, 169, 141, 0.4)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0 L30 60 M0 30 L60 30" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            color: var(--sand);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--forest);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            border: 2px solid var(--forest);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(27, 67, 50, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+        }
+        
+        .cta-button.secondary:hover {
+            background: var(--white);
+            color: var(--forest);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--forest);
+        }
+        
+        .section-subtitle {
+            color: var(--sage);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        /* About Section */
+        #about {
+            background: var(--white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            margin-bottom: 2rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--sage);
+        }
+        
+        .about-image {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1519167758481-83f29da8c33f?w=800&q=80') center/cover;
+            border-radius: 8px;
+            box-shadow: 20px 20px 0 var(--moss);
+        }
+        
+        /* Features Grid */
+        #features {
+            background: var(--sand);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--forest);
+        }
+        
+        .feature-card p {
+            color: var(--sage);
+            line-height: 1.8;
+        }
+        
+        /* Events Section */
+        #events {
+            background: var(--white);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .event-card {
+            position: relative;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .event-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(27, 67, 50, 0.9), transparent);
+            z-index: 1;
+        }
+        
+        .event-card.weddings {
+            background: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80') center/cover;
+        }
+        
+        .event-card.corporate {
+            background: url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80') center/cover;
+        }
+        
+        .event-card.celebrations {
+            background: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80') center/cover;
+        }
+        
+        .event-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            color: var(--white);
+            z-index: 2;
+        }
+        
+        .event-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Pool Section */
+        #pool {
+            background: var(--moss);
+            color: var(--white);
+        }
+        
+        #pool .section-title {
+            color: var(--white);
+        }
+        
+        #pool .section-subtitle {
+            color: var(--cream);
+        }
+        
+        .pool-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .pool-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pool-content p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .pricing {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .pricing h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-item .amount {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        /* Gallery */
+        #gallery {
+            background: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(0.98);
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--forest);
+            color: var(--white);
+        }
+        
+        #contact .section-title {
+            color: var(--white);
+        }
+        
+        #contact .section-subtitle {
+            color: var(--sand);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--sand);
+        }
+        
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .contact-item .icon {
+            font-size: 1.8rem;
+            color: var(--moss);
+        }
+        
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--sand);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            background: #25D366;
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        .map-container {
+            height: 100%;
+            min-height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--forest);
+            transition: all 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .about-grid,
+            .contact-grid,
+            .pool-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Stan Gardens</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#pool">Swimming</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Stan Gardens</h1>
+            <div class="tagline">Hidden Garden Oasis</div>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">Book Your Event</a>
+                <a href="#pool" class="cta-button secondary">Visit Our Pool</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Your Perfect Escape</h2>
+                    <p>Tucked away in Nairobi, Stan Gardens is a hidden gem where lush greenery meets elegant event spaces. Whether you're planning an intimate wedding, a corporate retreat, or a family celebration, our garden sanctuary provides the perfect backdrop.</p>
+                    <p>From our sparkling swimming pool to our beautifully manicured gardens, every corner of Stan Gardens is designed to make your special moments unforgettable.</p>
+                    <p>Experience tranquility, celebrate in style, and create memories that last a lifetime.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">Everything you need for a perfect day</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Lush Gardens</h3>
+                    <p>Beautifully landscaped green spaces perfect for outdoor ceremonies and photo sessions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏊</div>
+                    <h3>Swimming Pool</h3>
+                    <p>Clean, well-maintained pool open for guests. Perfect for family days and pool parties.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Dining Area</h3>
+                    <p>Spacious dining spaces for seated meals and buffet services. Catering available upon request.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛋️</div>
+                    <h3>Lounge Areas</h3>
+                    <p>Comfortable seating areas for guests to relax and enjoy the natural surroundings.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Ample Parking</h3>
+                    <p>Secure parking space for your guests' vehicles. No worries about street parking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Photo Spots</h3>
+                    <p>Instagram-worthy backgrounds throughout the property for stunning event photos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <div class="container">
+            <h2 class="section-title">Perfect For Every Occasion</h2>
+            <p class="section-subtitle">From intimate gatherings to grand celebrations</p>
+            
+            <div class="events-grid">
+                <div class="event-card weddings">
+                    <div class="event-info">
+                        <h3>Weddings</h3>
+                        <p>Garden ceremonies & receptions in a romantic, natural setting</p>
+                    </div>
+                </div>
+                
+                <div class="event-card corporate">
+                    <div class="event-info">
+                        <h3>Corporate Events</h3>
+                        <p>Team building, retreats, and company celebrations</p>
+                    </div>
+                </div>
+                
+                <div class="event-card celebrations">
+                    <div class="event-info">
+                        <h3>Celebrations</h3>
+                        <p>Birthdays, anniversaries, and family gatherings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pool Section -->
+    <section id="pool">
+        <div class="container">
+            <div class="pool-info">
+                <div class="pool-content">
+                    <h2 class="section-title">Swimming & Recreation</h2>
+                    <h3>Cool Off in Our Pool</h3>
+                    <p>Our clean, well-maintained swimming pool is open to all visitors. Perfect for a family day out, birthday pool parties, or just a relaxing swim in a beautiful garden setting.</p>
+                    <p>The pool area is surrounded by comfortable seating and shade, making it ideal for spending the entire day with friends and family.</p>
+                </div>
+                
+                <div class="pricing">
+                    <h4>Pool Rates</h4>
+                    <div class="price-item">
+                        <span>Adults</span>
+                        <span class="amount">KES 300</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Children</span>
+                        <span class="amount">KES 200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">See Our Space</h2>
+            <p class="section-subtitle">A glimpse of what awaits you</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80" alt="Garden view">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=800&q=80" alt="Pool area">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&q=80" alt="Event setup">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Garden pathway">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&q=80" alt="Green space">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Seating area">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Flowers">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <p class="section-subtitle">We'd love to show you around</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            Nairobi, Kenya<br>
+                            <a href="https://maps.app.goo.gl/Vw5VeS6kc5iSoC9fA" style="color: var(--moss);">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">⏰</div>
+                        <div>
+                            <strong>Opening Hours</strong>
+                            Daily: 8:00 AM - 7:00 PM
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">🎉</div>
+                        <div>
+                            <strong>Book Your Event</strong>
+                            Contact us for availability and custom packages
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/254XXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20inquire%20about%20booking%20Stan%20Gardens" class="whatsapp-btn">
+                        <svg viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.987 0-7.51 6.11-13.621 13.621-13.621s13.621 6.11 13.621 13.621c0 7.51-6.11 13.621-13.621 13.621zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.223-0.402 0.251-0.748 0.076-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.402 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.223 0.058-0.427-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.008-0.428-0.010-0.656-0.010s-0.603 0.085-0.92 0.427c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.223 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642 0.288-0.808 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.223-0.662-0.396z"/></svg>
+                        Contact Us on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19034527968!2d36.70730955!3d-1.302133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTgnMDcuNyJTIDM2wrA0MicyNi4zIkU!5e0!3m2!1sen!2ske!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Stan Gardens. Where nature meets celebration.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254XXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20inquire%20about%20Stan%20Gardens" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.987 0-7.51 6.11-13.621 13.621-13.621s13.621 6.11 13.621 13.621c0 7.51-6.11 13.621-13.621 13.621zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.223-0.402 0.251-0.748 0.076-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.402 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.223 0.058-0.427-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.008-0.428-0.010-0.656-0.010s-0.603 0.085-0.92 0.427c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.223 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642 0.288-0.808 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.223-0.662-0.396z"/></svg>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
